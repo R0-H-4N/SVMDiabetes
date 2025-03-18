@@ -37,4 +37,4 @@ def predictIt(input_vector):
     input_vector = np.array(input_vector).reshape(1, -1)
     input_vector = scaler.transform(input_vector)
     result = np.sign(model.predict(input_vector))
-    return "Diabetes" if result == 1 else "No Diabetes"
+    return "You might have diabetes." if result == 1 else "No Diabetes"

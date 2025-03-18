@@ -1,10 +1,48 @@
 <html>
     <head>
         <title>Prediction</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                text-align: center;
+            }
+            h1 {
+                color: #333;
+            }
+            input[type="submit"] {
+                background-color: #28a745;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-top: 20px;
+            }
+            input[type="submit"]:hover {
+                background-color: #218838;
+            }
+        </style>
     </head>
     <body>
-        <h1>{{ prediction }}</h1>
-        <form action = '{% url "home"%}' method = 'get'>
-            <input type="submit" value="Back">
+        <div class="container">
+            <h1>{{ prediction }}</h1>
+            <form action='{% url "home" %}' method='get'>
+                <input type="submit" value="Back">
+            </form>
+        </div>
     </body>
-</html>
+</html></form></div>

@@ -1,31 +1,80 @@
 <html>
     <head>
         <title>Diabetes</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                text-align: center;
+            }
+            h1 {
+                color: #333;
+            }
+            label {
+                display: block;
+                margin-top: 10px;
+                color: #555;
+            }
+            input[type="text"] {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            input[type="submit"] {
+                background-color: #28a745;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-top: 20px;
+            }
+            input[type="submit"]:hover {
+                background-color: #218838;
+            }
+        </style>
     </head>
     <body>
-        <h1>Womens Diabetes Detector</h1>
-        <p>Enter the details of the patient to predict the diabetes</p>
-        <form action = '{% url "predict"%}' method = 'post'>
-            {% csrf_token %}
-            <label for="Pregnancies">Pregnancies:</label>
-            <input type="text" id="Pregnancies" name="Pregnancies"><br><br>
+        <div class="container">
+            <h1>Womens Diabetes Detector</h1>
+            <p>Enter the details of the patient to predict the diabetes</p>
+            <form action='{% url "predict"%}' method='post'>
+                {% csrf_token %}
+                <label for="Pregnancies">Pregnancies:</label>
+                <input type="text" id="Pregnancies" name="Pregnancies"><br>
 
-            <label for="Glucose">Glucose (mg/dL):</label>
-            <input type="text" id="Glucose" name="Glucose"><br><br>
+                <label for="Glucose">Glucose (mg/dL):</label>
+                <input type="text" id="Glucose" name="Glucose"><br>
 
-            <label for="BloodPressure">Blood Pressure (mmHg diastolic):</label>
-            <input type="text" id="BloodPressure" name="BloodPressure"><br><br>
+                <label for="BloodPressure">Blood Pressure (mmHg diastolic):</label>
+                <input type="text" id="BloodPressure" name="BloodPressure"><br>
 
-            <label for="Weight">Weight (kg):</label>
-            <input type="text" id="Weight" name="Weight"><br><br>
+                <label for="Weight">Weight (kg):</label>
+                <input type="text" id="Weight" name="Weight"><br>
 
-            <label for="Height">Height (cm):</label>
-            <input type="text" id="Height" name="Height"><br><br>
+                <label for="Height">Height (cm):</label>
+                <input type="text" id="Height" name="Height"><br>
 
-            <label for="Age">Age:</label>
-            <input type="text" id="Age" name="Age"><br><br>
+                <label for="Age">Age:</label>
+                <input type="text" id="Age" name="Age"><br>
 
-            <input type="submit" value="Predict">
-        </form>
+                <input type="submit" value="Predict">
+            </form>
+        </div>
     </body>
 </html>
