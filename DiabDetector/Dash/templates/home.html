@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Diabetes</title>
+    </head>
+    <body>
+        <h1>Womens Diabetes Detector</h1>
+        <p>Enter the details of the patient to predict the diabetes</p>
+        <form action = '{% url "predict"%}' method = 'post'>
+            {% csrf_token %}
+            <label for="Pregnancies">Pregnancies:</label>
+            <input type="text" id="Pregnancies" name="Pregnancies"><br><br>
+
+            <label for="Glucose">Glucose (mg/dL):</label>
+            <input type="text" id="Glucose" name="Glucose"><br><br>
+
+            <label for="BloodPressure">Blood Pressure (mmHg diastolic):</label>
+            <input type="text" id="BloodPressure" name="BloodPressure"><br><br>
+
+            <label for="Weight">Weight (kg):</label>
+            <input type="text" id="Weight" name="Weight"><br><br>
+
+            <label for="Height">Height (cm):</label>
+            <input type="text" id="Height" name="Height"><br><br>
+
+            <label for="Age">Age:</label>
+            <input type="text" id="Age" name="Age"><br><br>
+
+            <input type="submit" value="Predict">
+        </form>
+    </body>
+</html>
